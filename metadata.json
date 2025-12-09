@@ -1,0 +1,8 @@
+{
+  "name": "Talk To Study",
+  "description": "An accessible, multimodal learning tool for visually impaired users and students.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

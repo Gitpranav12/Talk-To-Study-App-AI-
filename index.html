@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Talk To Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              access: {
+                bg: 'var(--bg-primary)',
+                card: 'var(--bg-card)',
+                text: 'var(--text-primary)',
+                textSec: 'var(--text-secondary)',
+                accent: 'var(--accent)',
+                accentHover: 'var(--accent-hover)',
+                border: 'var(--border)',
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.3s ease-out forwards',
+              'bounce': 'bounce 1s infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --bg-primary: #000000;
+        --bg-card: #1a1a1a;
+        --text-primary: #ffffff;
+        --text-secondary: #9ca3af;
+        --accent: #fbbf24;
+        --accent-hover: #f59e0b;
+        --border: #374151;
+      }
+
+      .light-theme {
+        --bg-primary: #f3f4f6; /* gray-100 */
+        --bg-card: #ffffff;
+        --text-primary: #111827; /* gray-900 */
+        --text-secondary: #4b5563; /* gray-600 */
+        --accent: #f59e0b; /* amber-500 */
+        --accent-hover: #d97706; /* amber-600 */
+        --border: #e5e7eb; /* gray-200 */
+      }
+
+      /* Custom scrollbar for better accessibility/visibility */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-card);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--accent);
+        border-radius: 6px;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-fade-in-up {
+        animation: fadeInUp 0.3s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.32.0",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
+  }
+}
+</script>
+</head>
+  <body class="bg-access-bg text-access-text antialiased h-screen overflow-hidden transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
